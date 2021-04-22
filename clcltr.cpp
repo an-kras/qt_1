@@ -284,11 +284,10 @@ void Calculator::backspaceClicked()
 
      QString text = display->text();
      text.chop(1);
-     if (text.isEmpty()) {
+     if (text.isEmpty() || text == "0") {
          text = "0";
          waitingForOperand = true;
      }
-     // if (!display->text().contains("."))
 
      display->setText(text);
 
